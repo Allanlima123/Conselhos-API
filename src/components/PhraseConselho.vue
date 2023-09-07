@@ -1,45 +1,42 @@
 <template>
   <h2 class="number_advice">
     ADVICE
-    <span id="number">#{{ slip.id }}</span>
+    <span id="number">#{{ props.slip.id }}</span>
   </h2>
 
   <div class="box-conselho">
-    <div class="box_advice">{{ slip.advice }}</div>
+    <div class="box_advice">{{ props.slip.advice }}</div>
   </div>
 
-  <img
-    src="/img/divider-desktop.svg"
-    alt="divider-desktop"
-    class="divider-desktop"
-  />
+  <img :src="imgDado" alt="divider-desktop" class="divider-desktop" />
 </template>
 
 <script setup>
-  import { defineProps } from 'vue';
+import { defineProps, ref } from "vue";
 
-  defineProps(
-    {
-      slip : {type : Object}, 
-    }
-  )
+const props = defineProps({
+  slip : {
+    type: Object,
+  },
+});
 
-  //   methods : {
-  //     async changePhrase(){
-  //         const urlAdvice = "https://api.adviceslip.com/advice";
+const imgDado = ref("/img/divider-desktop.svg");
 
-  //         const getDateAdive = await (await fetch(urlAdvice)).json();
+//   methods : {
+//     async changePhrase(){
+//         const urlAdvice = "https://api.adviceslip.com/advice";
 
-  //         this.idPhrase = getDateAdive.slip.id;
-  //         this.phrase = getDateAdive.slip.advice;
-  //     }
-  //   },
+//         const getDateAdive = await (await fetch(urlAdvice)).json();
 
-  //   mounted(){
-  //     this.changePhrase();
-  //     // setInterval(() =>{this.changePhrase()},5000)
-  //   }
+//         this.idPhrase = getDateAdive.slip.id;
+//         this.phrase = getDateAdive.slip.advice;
+//     }
+//   },
 
+//   mounted(){
+//     this.changePhrase();
+//     // setInterval(() =>{this.changePhrase()},5000)
+//   }
 </script>
 
 <style scoped>
