@@ -5,7 +5,7 @@
   </h2>
 
   <div class="box-conselho">
-    <div class="box_advice">{{ props.slip.advice }}</div>
+    <div class="box_advice">{{ slip.advice }}</div>
   </div>
 
   <img :src="imgDado" alt="divider-desktop" class="divider-desktop" />
