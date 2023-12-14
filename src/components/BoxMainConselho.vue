@@ -47,7 +47,7 @@ onBeforeMount(() =>{
   width: 4.5rem;
   height: 4.5rem;
   border-radius: 50%;
-  background: var(--Neon-Green);
+  background: red;
   display: flex;
   justify-content: center;
   align-items: center;
